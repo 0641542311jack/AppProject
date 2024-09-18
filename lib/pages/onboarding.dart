@@ -2,6 +2,7 @@ import 'package:barberapp/pages/home.dart';
 import 'package:barberapp/pages/login.dart';
 import 'package:barberapp/pages/signup.dart';
 import 'package:barberapp/shop_owner/login_owner.dart';
+import 'package:barberapp/shop_owner/signup_owner.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatefulWidget {
@@ -45,11 +46,11 @@ class _OnboardingState extends State<Onboarding> {
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return SignUp();
+                              return Login_Owner();
                             }));
                           },
                           child: Text(
-                            "สมัครสมาชิก",
+                            "เจ้าของร้าน",
                             style: TextStyle(
                               fontSize: 25,
                               color: Color.fromARGB(255, 10, 36, 66),
@@ -80,7 +81,7 @@ class _OnboardingState extends State<Onboarding> {
                               }));
                             },
                             child: Text(
-                              "เข้าสู่ระบบ",
+                              "ลูกค้า",
                               style: TextStyle(
                                   fontSize: 25,
                                   color: const Color.fromARGB(255, 10, 36, 66)),
