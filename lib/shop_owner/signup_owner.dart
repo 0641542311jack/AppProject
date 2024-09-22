@@ -66,6 +66,7 @@ class _Signup_OwnerState extends State<Signup_Owner> {
       }
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,8 +81,10 @@ class _Signup_OwnerState extends State<Signup_Owner> {
               height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Color.fromARGB(255, 4, 37, 72), Color.fromARGB(255, 11, 52, 96)])),
+                  gradient: LinearGradient(colors: [
+                Color.fromARGB(255, 4, 37, 72),
+                Color.fromARGB(255, 11, 52, 96)
+              ])),
               child: Text(
                 "Create Your\nAccount",
                 style: TextStyle(
@@ -102,150 +105,154 @@ class _Signup_OwnerState extends State<Signup_Owner> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40))),
-              child: Form(
-                key: _formkey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Name",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 4, 37, 72),
-                          fontSize: 23,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'กรุณากรอกชื่อ';
-                        }
-                        return null;
-                      },
-                      controller: namecontroller,
-                      decoration: InputDecoration(
-                          hintText: "Name",
-                          prefixIcon: Icon(Icons.person_outline)),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Gmail",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 4, 37, 72),
-                          fontSize: 23,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'กรุณากรอก E-mail';
-                        }
-                        return null;
-                      },
-                      controller: emailcontroller,
-                      decoration: InputDecoration(
-                          hintText: "Gmail",
-                          prefixIcon: Icon(Icons.mail_outline)),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Password",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 4, 37, 72),
-                          fontSize: 23,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'กรุณากรอก Password';
-                        }
-                        return null;
-                      },
-                      controller: passwordcontroller,
-                      decoration: InputDecoration(
-                        hintText: "Password",
-                        prefixIcon: Icon(Icons.password_outlined),
+              child: SingleChildScrollView(
+                child: Form(
+                  key: _formkey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Name",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 4, 37, 72),
+                            fontSize: 23,
+                            fontWeight: FontWeight.w500),
                       ),
-                      obscureText: true,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        if (_formkey.currentState!.validate()) {
-                          setState(() {
-                            mail = emailcontroller.text;
-                            name = namecontroller.text;
-                            password = passwordcontroller.text;
-                          });
-                        }
-                        registration();
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                              Color.fromARGB(255, 4, 37, 72),
-                              Color.fromARGB(255, 11, 52, 96),
-                            ]),
-                            borderRadius:
-                                BorderRadius.circular(30),
-                                boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.7), // สีของเงา
-                              spreadRadius: 2, // การกระจายของเงา
-                              blurRadius: 6, // การเบลอของเงา
-                              offset: Offset(0, 3), // ตำแหน่งของเงา
-                            )
-                          ]), //ความโค้งปุ่ม
-                        child: Center(
-                            child: Text(
-                          "SIGN UP",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        )),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'กรุณากรอกชื่อ';
+                          }
+                          return null;
+                        },
+                        controller: namecontroller,
+                        decoration: InputDecoration(
+                            hintText: "Name",
+                            prefixIcon: Icon(Icons.person_outline)),
                       ),
-                    ),
-                    Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Already have an account?",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 11, 52, 96),
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "Gmail",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 4, 37, 72),
+                            fontSize: 23,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'กรุณากรอก E-mail';
+                          }
+                          return null;
+                        },
+                        controller: emailcontroller,
+                        decoration: InputDecoration(
+                            hintText: "Gmail",
+                            prefixIcon: Icon(Icons.mail_outline)),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "Password",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 4, 37, 72),
+                            fontSize: 23,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'กรุณากรอก Password';
+                          }
+                          return null;
+                        },
+                        controller: passwordcontroller,
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          prefixIcon: Icon(Icons.password_outlined),
                         ),
-                      ],
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login_Owner()));
-                      },
-                      child: Row(
+                        obscureText: true,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          if (_formkey.currentState!.validate()) {
+                            setState(() {
+                              mail = emailcontroller.text;
+                              name = namecontroller.text;
+                              password = passwordcontroller.text;
+                            });
+                          }
+                          registration();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                                Color.fromARGB(255, 4, 37, 72),
+                                Color.fromARGB(255, 11, 52, 96),
+                              ]),
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      Colors.black.withOpacity(0.7), // สีของเงา
+                                  spreadRadius: 2, // การกระจายของเงา
+                                  blurRadius: 6, // การเบลอของเงา
+                                  offset: Offset(0, 3), // ตำแหน่งของเงา
+                                )
+                              ]), //ความโค้งปุ่ม
+                          child: Center(
+                              child: Text(
+                            "SIGN UP",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          )),
+                        ),
+                      ),
+                      Spacer(),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "Sign In",
+                            "Already have an account?",
                             style: TextStyle(
                                 color: Color.fromARGB(255, 11, 52, 96),
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Login_Owner()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Sign In",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 11, 52, 96),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

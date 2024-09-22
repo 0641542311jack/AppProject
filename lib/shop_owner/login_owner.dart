@@ -77,6 +77,7 @@ String? mail, password;
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40))),
+              child:SingleChildScrollView(
               child: Form(
                 key: _formkey,
                 child: Column(
@@ -203,6 +204,7 @@ String? mail, password;
                   ],
                 ),
               ),
+            ),
             ),
           ],
         ),

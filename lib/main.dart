@@ -1,5 +1,6 @@
 import 'package:barberapp/Admin/admin_login.dart';
 import 'package:barberapp/Admin/booking_admin.dart';
+import 'package:barberapp/pages/Camera.dart';
 import 'package:barberapp/pages/VDOHAIR.dart';
 import 'package:barberapp/pages/booking.dart';
 import 'package:barberapp/pages/hair.dart';
@@ -8,8 +9,7 @@ import 'package:barberapp/pages/login.dart';
 import 'package:barberapp/pages/myface.dart';
 import 'package:barberapp/pages/onboarding.dart';
 import 'package:barberapp/pages/signup.dart';
-// import 'package:barberapp/pages/StarRatingPopup.dart';
-import 'package:barberapp/pages/star_rating_popup.dart';
+import 'package:barberapp/pages/star_rating.dart';
 import 'package:barberapp/pages/vdo_hair01.dart';
 import 'package:barberapp/pages/vdo_hair02.dart';
 import 'package:barberapp/pages/vdo_hair03.dart';

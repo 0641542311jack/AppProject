@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/Camera.dart';
 import 'package:barberapp/pages/UserProfilePage.dart';
 import 'package:barberapp/pages/VDOHAIR.dart';
 import 'package:barberapp/pages/booking.dart';
@@ -450,7 +451,9 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(
+                    width: 20,
+                  ),
                   Flexible(
                     fit: FlexFit.tight,
                     child: GestureDetector(
@@ -458,7 +461,7 @@ class _HomeState extends State<Home> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LogIn(), // ไม่มีพารามิเตอร์
+                            builder: (context) => LogIn(),
                           ),
                         );
                       },
@@ -488,6 +491,58 @@ class _HomeState extends State<Home> {
                             SizedBox(height: 1),
                             Text(
                               "ออกจากระบบ",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 15,),
+              Row(
+                children: [
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CameraExample(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 120,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 50, 83, 125),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.6),
+                                spreadRadius: 5,
+                                blurRadius: 20,
+                                offset: Offset(0, 3),
+                              )
+                            ]),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "images/Camera.png",
+                              height: 80,
+                              width: 140,
+                              fit: BoxFit.cover,
+                            ),
+                            SizedBox(height: 1),
+                            Text(
+                              "ถ่ายภาพ",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,

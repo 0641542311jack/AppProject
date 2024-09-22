@@ -25,9 +25,9 @@ class _OnboardingState extends State<Onboarding> {
                 Image.asset(
                   "images/welcome.png",
                   width: 350,
-                  height: 280,
+                  height: 400,
                   fit: BoxFit.cover,
-                ),
+                ),SizedBox(height: 55,),
                 SizedBox(
                   width: double.infinity,
                   height: 130, //ขนาดปุ่ม

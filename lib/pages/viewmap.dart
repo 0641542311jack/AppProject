@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -44,13 +43,25 @@ class _MapsPageState extends State<MapsPage> {
   }
 
   static final Marker _kGooglePlexMarker = Marker(
-      markerId: MarkerId('_kGooglePlex'),
-      infoWindow: InfoWindow(title: 'ร้านตัดผม'),
-      icon: BitmapDescriptor.defaultMarker,
-      position: LatLng(
-        16.250034,
-        103.247939,
-      ));
+    markerId: MarkerId('_kGooglePlex'),
+    infoWindow: InfoWindow(title: 'ร้านตัดผม'),
+    icon: BitmapDescriptor.defaultMarker,
+    position: LatLng(
+      16.250034,
+      103.247939,
+    ),
+  );
+
+  //เพิ่ม ตำแหน่ง Marker ใหม่
+  // static final Marker _newMarker = Marker(
+  //   markerId: MarkerId('_newMarker'),
+  //   infoWindow: InfoWindow(title: 'ร้านกาแฟ'),
+  //   icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+  //   position: LatLng(
+  //     16.250524, // Latitude ของตำแหน่งใหม่
+  //     103.250465, // Longitude ของตำแหน่งใหม่
+  //   ),
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +78,14 @@ class _MapsPageState extends State<MapsPage> {
                 mapType: MapType.hybrid,
                 markers: {
                   _kGooglePlexMarker,
+                 // _newMarker, // เพิ่ม Marker ใหม่ใน set นี้
                 },
                 onMapCreated: _onMapCreated,
                 myLocationEnabled: true,
                 initialCameraPosition: CameraPosition(
-                    target:
-                        LatLng(userLocation.latitude, userLocation.longitude),
-                    zoom: 15),
+                  target: LatLng(userLocation.latitude, userLocation.longitude),
+                  zoom: 15,
+                ),
               );
             } else {
               return Center(
@@ -100,7 +112,7 @@ class _MapsPageState extends State<MapsPage> {
                 builder: (context) {
                   return AlertDialog(
                     content: Text(
-                        'Your location has been sent!\nlat: ${userLocation.latitude} long: ${userLocation.longitude}'),
+                        'พิกัดร้านตัดผม \n${userLocation.latitude} long: ${userLocation.longitude}'),
                   );
                 },
               );
@@ -116,3 +128,4 @@ class _MapsPageState extends State<MapsPage> {
     );
   }
 }
+

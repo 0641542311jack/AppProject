@@ -1,7 +1,8 @@
+import 'package:barberapp/pages/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../services/database.dart';
-import 'star_rating_popup.dart'; // Ensure this path is correct
+
 
 class Booking_User extends StatefulWidget {
   final String service;
@@ -103,8 +104,8 @@ class _Booking_UserState extends State<Booking_User> {
                               onTap: () {
                                 showDialog(
                                   context: context,
-                                  builder: (context) => StarRatingPopup(
-                                    bookingId: ds.id, // Pass the booking ID
+                                  builder: (context) => StarRatingPopup( 
+                                    bookingId: ds.id,
                                   ),
                                 );
                               },
